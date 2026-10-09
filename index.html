@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graphic Design Study | グラフィックデザインの勉強ノート</title>
+<meta name="description" content="グラフィックデザインを学ぶ過程を記録する勉強サイト。進捗ログ、漫画・イラスト、小さな小論文。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#da07d6;
+  --accent-deep:#9b0498;
+  --accent-tint:#f9dcf7;
+  --ink:#1f0f22;
+  --paper:#fbf8fc;
+  --blue:#3b2bdb;
+  --line:#dcc9de;
+  --display:"Syne","Zen Kaku Gothic New",sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(251,248,252,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:8px 0 0 -2px var(--blue);mix-blend-mode:multiply;display:inline-block;margin-right:8px}
+nav ul{list-style:none;display:flex;gap:28px;font-size:14px;font-weight:500}
+nav a{padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+nav a:hover,nav a[aria-current]{border-color:var(--accent)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:88px 0 96px}
+.hero .wrap{position:relative}
+.hero h1{font-family:var(--display);font-weight:800;line-height:.92;letter-spacing:-.035em;font-size:clamp(56px,13vw,160px);position:relative;z-index:2}
+.hero h1 span{display:block}
+.hero h1 .l2{margin-left:clamp(24px,9vw,120px);color:var(--accent)}
+.hero h1 .l3{-webkit-text-stroke:2px var(--ink);color:transparent}
+.hero .lead{position:relative;z-index:2;max-width:30em;margin:40px 0 0 clamp(0px,9vw,120px);font-size:17px}
+.hero .lead strong{font-weight:700;background:linear-gradient(transparent 62%,var(--accent-tint) 62%)}
+.shape{position:absolute;border-radius:50%;mix-blend-mode:multiply;z-index:1}
+.s1{width:clamp(200px,34vw,420px);aspect-ratio:1;background:var(--accent);right:-2%;top:-6%}
+.s2{width:clamp(160px,27vw,330px);aspect-ratio:1;background:var(--blue);right:14%;top:22%}
+.s3{width:clamp(70px,9vw,120px);aspect-ratio:1;border:3px solid var(--ink);right:3%;bottom:2%}
+@media (prefers-reduced-motion:no-preference){
+  .s1,.s2{animation:settle 1.1s cubic-bezier(.2,.8,.2,1) both}
+  .s2{animation-delay:.15s}
+  @keyframes settle{from{transform:translate(40px,-30px) scale(.85);opacity:0}to{transform:none;opacity:1}}
+}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:36px;border-bottom:3px solid var(--ink);padding-bottom:14px}
+.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,4.5vw,44px);letter-spacing:-.02em;line-height:1.1}
+.sec-head p{font-size:14px;color:#6b566e}
+
+/* intro */
+.intro{display:grid;grid-template-columns:1fr 1.4fr;gap:48px}
+.intro h3{font-size:clamp(22px,3vw,30px);line-height:1.5;font-weight:700}
+.intro p+p{margin-top:1em}
+.topics{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.topics li{list-style:none;border:1.5px solid var(--ink);border-radius:999px;padding:3px 16px;font-size:14px;font-weight:500}
+.topics li:nth-child(odd){background:var(--accent-tint);border-color:var(--accent-deep)}
+
+/* index of pages */
+.rooms{list-style:none}
+.rooms a{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:center;padding:28px 12px;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
+.rooms a:hover{background:var(--accent);color:#fff;padding-left:24px;padding-right:24px}
+.rooms .name{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.6vw,38px);letter-spacing:-.02em;line-height:1}
+.rooms .desc{font-size:15px}
+.rooms .go{font-family:var(--display);font-size:24px}
+
+/* recent log */
+.log{background:var(--ink);color:var(--paper)}
+.log .sec-head{border-color:var(--accent)}
+.log .sec-head p{color:#c9b3cc}
+.feed{max-width:640px;list-style:none}
+.feed li{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:22px 0;border-bottom:1px solid #43304a}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--accent);position:relative;overflow:hidden}
+.avatar::after{content:"";position:absolute;width:30px;height:30px;border-radius:50%;background:var(--blue);mix-blend-mode:multiply;right:-8px;bottom:-6px}
+.feed time{display:block;font-size:13px;color:#c9b3cc;margin-bottom:2px}
+.feed p{font-size:15.5px}
+.more{display:inline-block;margin-top:28px;border:2px solid var(--accent);padding:8px 24px;border-radius:999px;font-weight:700;font-size:15px;transition:background .2s}
+.more:hover{background:var(--accent)}
+
+footer{padding:40px 0;font-size:13px;color:#6b566e}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:760px){
+  nav ul{gap:16px;font-size:13px}
+  .logo span{display:none}
+  .hero{padding:56px 0 72px}
+  .intro{grid-template-columns:1fr;gap:24px}
+  .rooms a{grid-template-columns:1fr auto;gap:6px 16px}
+  .rooms .desc{grid-column:1/2;grid-row:2}
+  .rooms .go{grid-row:1/3;grid-column:2}
+  .s2{right:6%;top:30%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><i></i><span>Graphic Design Study</span></a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="column.html">Column</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="shape s1" aria-hidden="true"></div>
+    <div class="shape s2" aria-hidden="true"></div>
+    <div class="shape s3" aria-hidden="true"></div>
+    <div class="wrap">
+      <h1>
+        <span class="l1">Graphic</span>
+        <span class="l2">Design</span>
+        <span class="l3">Study</span>
+      </h1>
+      <p class="lead">色、文字、余白、構図。<strong>見る人に伝わるかたち</strong>を、ひとつずつ学んで記録していく勉強ノートです。</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Welcome</h2>
+        <p>このサイトについて</p>
+      </div>
+      <div class="intro">
+        <h3>デザインは、<br>伝えるための技術。</h3>
+        <div>
+          <p>グラフィックデザインの基礎から応用まで、勉強したことや気づいたことをまとめています。作って、壊して、直す。その過程ごと残すことで、あとから見返せるノートにしたいと思っています。</p>
+          <p>学んだ内容は日々のログに、関連する漫画やイラスト、考えたことは読みものとして置いていきます。</p>
+          <ul class="topics">
+            <li>色彩</li><li>タイポグラフィ</li><li>レイアウト</li><li>配色の心理</li><li>ロゴ・ポスター</li><li>ツールの使い方</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Rooms</h2>
+        <p>ページ案内</p>
+      </div>
+      <ul class="rooms">
+        <li><a href="blog.html"><span class="name">Blog</span><span class="desc">勉強の進捗を、日付と一言日記で記録するログ。</span><span class="go" aria-hidden="true">→</span></a></li>
+        <li><a href="column.html"><span class="name">Column</span><span class="desc">関連する漫画・イラスト・4コマと、軽い小論文。</span><span class="go" aria-hidden="true">→</span></a></li>
+        <li><a href="about.html"><span class="name">About</span><span class="desc">このサイトと、運営している人のこと。</span><span class="go" aria-hidden="true">→</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="log">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Latest log</h2>
+        <p>最近の勉強記録（サンプル）</p>
+      </div>
+      <ul class="feed">
+        <li>
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-10-08">2026.10.08</time><p>色相環をもう一度整理。補色を並べると目がチカチカするけど、面積比を変えるだけで一気に落ち着くことに気づいた。</p></div>
+        </li>
+        <li>
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-10-07">2026.10.07</time><p>フォントの種類を調べた。明朝とゴシックで同じ文章でも印象がまったく違う。</p></div>
+        </li>
+        <li>
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-10-06">2026.10.06</time><p>余白は「何もない」のではなく「見せるためにある」。今日の気づき。</p></div>
+        </li>
+      </ul>
+      <a class="more" href="blog.html">ログをすべて見る →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Graphic Design Study</span>
+    <span>Color: #da07d6</span>
+  </div>
+</footer>
+
+</body>
+</html>

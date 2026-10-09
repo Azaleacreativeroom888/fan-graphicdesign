@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Graphic Design Study</title>
+<meta name="description" content="グラフィックデザインの勉強の進捗を、日付と一言日記で記録するログ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#da07d6;
+  --accent-deep:#9b0498;
+  --accent-tint:#f9dcf7;
+  --ink:#1f0f22;
+  --paper:#fbf8fc;
+  --blue:#3b2bdb;
+  --line:#dcc9de;
+  --display:"Syne","Zen Kaku Gothic New",sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(251,248,252,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:8px 0 0 -2px var(--blue);mix-blend-mode:multiply;display:inline-block;margin-right:8px}
+nav ul{list-style:none;display:flex;gap:28px;font-size:14px;font-weight:500}
+nav a{padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+nav a:hover,nav a[aria-current]{border-color:var(--accent)}
+
+/* page title */
+.title{position:relative;overflow:hidden;padding:72px 0 56px;border-bottom:3px solid var(--ink)}
+.title .wrap{position:relative}
+.title h1{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:-.035em;font-size:clamp(64px,14vw,150px);position:relative;z-index:2}
+.title p{position:relative;z-index:2;margin-top:20px;max-width:28em}
+.shape{position:absolute;border-radius:50%;mix-blend-mode:multiply;z-index:1}
+.s1{width:clamp(140px,24vw,300px);aspect-ratio:1;background:var(--accent);right:2%;top:-18%}
+.s2{width:clamp(110px,18vw,220px);aspect-ratio:1;background:var(--blue);right:16%;top:18%}
+
+/* feed */
+.layout{display:grid;grid-template-columns:220px minmax(0,640px);gap:64px;padding:56px 0 88px}
+.side{position:sticky;top:96px;align-self:start;font-size:14px}
+.side h2{font-family:var(--display);font-weight:800;font-size:20px;margin-bottom:12px;letter-spacing:-.01em}
+.side ul{list-style:none}
+.side li a{display:block;padding:6px 0 6px 14px;border-left:3px solid var(--line);transition:border-color .2s,color .2s}
+.side li a:hover{border-color:var(--accent);color:var(--accent-deep)}
+
+.feed{list-style:none}
+.post{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:28px 0;border-bottom:1px solid var(--line)}
+.post:first-child{padding-top:0}
+.avatar{width:48px;height:48px;border-radius:50%;background:var(--accent);position:relative;overflow:hidden}
+.avatar::after{content:"";position:absolute;width:32px;height:32px;border-radius:50%;background:var(--blue);mix-blend-mode:multiply;right:-8px;bottom:-6px}
+.post time{display:block;font-weight:700;font-size:14px;color:var(--accent-deep);margin-bottom:2px}
+.post p{font-size:16px}
+.month{font-family:var(--display);font-weight:800;font-size:15px;padding:28px 0 8px;border-bottom:1px solid var(--line);color:#6b566e}
+.month:first-child{padding-top:0}
+
+footer{padding:40px 0;font-size:13px;color:#6b566e;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:820px){
+  .layout{grid-template-columns:1fr;gap:32px}
+  .side{display:none}
+  nav ul{gap:16px;font-size:13px}
+  .logo span{display:none}
+  .title{padding:48px 0 40px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><i></i><span>Graphic Design Study</span></a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href="column.html">Column</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="title">
+    <div class="shape s1" aria-hidden="true"></div>
+    <div class="shape s2" aria-hidden="true"></div>
+    <div class="wrap">
+      <h1>Blog</h1>
+      <p>勉強の進捗を、その日のうちに一言で。新しい記録が上に積まれていきます。</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="side" aria-label="月別">
+        <h2>Archive</h2>
+        <ul>
+          <li><a href="#m2026-10">2026年10月</a></li>
+          <li><a href="#m2026-09">2026年9月</a></li>
+        </ul>
+      </aside>
+
+      <ol class="feed" reversed>
+        <li class="month" id="m2026-10">2026年10月</li>
+        <li class="post">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-10-08">2026.10.08</time><p>色相環をもう一度整理。補色を並べると目がチカチカするけど、面積比を変えるだけで一気に落ち着くことに気づいた。</p></div>
+        </li>
+        <li class="post">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-10-07">2026.10.07</time><p>フォントの種類を調べた。明朝とゴシックで同じ文章でも印象がまったく違う。</p></div>
+        </li>
+        <li class="post">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-10-06">2026.10.06</time><p>余白は「何もない」のではなく「見せるためにある」。今日の気づき。</p></div>
+        </li>
+        <li class="post">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-10-04">2026.10.04</time><p>好きなポスターを3枚選んで、どこに目が行くか矢印を書き込んでみた。視線の流れは意外とみんな左上から始まる。</p></div>
+        </li>
+        <li class="post">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-10-02">2026.10.02</time><p>グリッドレイアウトの基本を勉強。まず線を引いてから置くと、ばらばらだった要素が急に整う。</p></div>
+        </li>
+
+        <li class="month" id="m2026-09">2026年9月</li>
+        <li class="post">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-09-28">2026.09.28</time><p>ロゴの練習。まず白黒で作って、色は最後につける。形が弱いと色でごまかせないと分かった。</p></div>
+        </li>
+        <li class="post">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-09-25">2026.09.25</time><p>文字の「ジャンプ率」を学んだ。大きい文字と小さい文字の差をつけると、読む順番が自然に決まる。</p></div>
+        </li>
+        <li class="post">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><time datetime="2026-09-20">2026.09.20</time><p>グラフィックデザインの勉強を始めた。まずは色・文字・余白の3つから。</p></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Graphic Design Study</span>
+    <a href="index.html">Home に戻る</a>
+  </div>
+</footer>
+
+</body>
+</html>

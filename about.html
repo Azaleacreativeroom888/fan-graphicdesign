@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Graphic Design Study</title>
+<meta name="description" content="リンク集とお問い合わせフォーム。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#da07d6;
+  --accent-deep:#9b0498;
+  --accent-tint:#f9dcf7;
+  --ink:#1f0f22;
+  --paper:#fbf8fc;
+  --blue:#3b2bdb;
+  --line:#dcc9de;
+  --display:"Syne","Zen Kaku Gothic New",sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(251,248,252,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:8px 0 0 -2px var(--blue);mix-blend-mode:multiply;display:inline-block;margin-right:8px}
+nav ul{list-style:none;display:flex;gap:28px;font-size:14px;font-weight:500}
+nav a{padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+nav a:hover,nav a[aria-current]{border-color:var(--accent)}
+
+/* page title */
+.title{position:relative;overflow:hidden;padding:72px 0 48px;border-bottom:3px solid var(--ink)}
+.title .wrap{position:relative}
+.title h1{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:-.035em;font-size:clamp(64px,14vw,150px);position:relative;z-index:2}
+.title p{position:relative;z-index:2;margin-top:20px;max-width:28em}
+.shape{position:absolute;border-radius:50%;mix-blend-mode:multiply;z-index:1}
+.s1{width:clamp(140px,24vw,300px);aspect-ratio:1;background:var(--accent);right:2%;top:-18%}
+.s2{width:clamp(110px,18vw,220px);aspect-ratio:1;background:var(--blue);right:16%;top:18%}
+
+/* sections */
+section{padding:64px 0 8px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:28px;border-bottom:3px solid var(--ink);padding-bottom:14px}
+.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,4.5vw,44px);letter-spacing:-.02em;line-height:1.1}
+.sec-head p{font-size:14px;color:#6b566e}
+.group{font-family:var(--display);font-weight:800;font-size:14px;letter-spacing:.04em;color:var(--accent-deep);margin:32px 0 14px}
+.group:first-of-type{margin-top:0}
+
+/* link cards */
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;list-style:none}
+.links a{display:flex;align-items:center;gap:16px;height:100%;padding:16px 18px;background:#fff;border:2px solid var(--ink);transition:transform .2s,box-shadow .2s,background .2s}
+.links a:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--accent)}
+.ico{flex:none;width:46px;height:46px;border-radius:50%;background:var(--accent-tint);display:grid;place-items:center;font-size:22px}
+.links b{display:block;font-size:15px;line-height:1.4}
+.links small{display:block;font-size:12.5px;color:#6b566e;line-height:1.5;margin-top:2px}
+.links .arr{margin-left:auto;font-family:var(--display);font-size:20px;color:var(--accent)}
+
+/* form */
+.form{max-width:680px;background:#fff;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--accent);padding:32px}
+.form .intro{font-size:14.5px;margin-bottom:24px}
+.field{margin-bottom:20px}
+.field label{display:block;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.04em;margin-bottom:6px}
+.req{color:var(--accent);font-style:normal}
+.field input,.field textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--paper);border:2px solid var(--line);border-radius:0;padding:10px 14px;transition:border-color .2s,background .2s}
+.field input::placeholder,.field textarea::placeholder{color:#a994ac}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+.field textarea{min-height:150px;resize:vertical}
+.err{display:block;font-size:12.5px;color:#c4002f;margin-top:4px}
+.err:empty{display:none}
+.send{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:15px;color:#fff;background:var(--accent);border:2px solid var(--ink);padding:10px 30px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.send:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.send:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.ok{background:var(--accent-tint);border:2px solid var(--accent-deep);padding:14px 18px;margin-bottom:20px;font-weight:700;text-align:center}
+.ng{background:#ffe3e8;border:2px solid #c4002f;color:#7d0020;padding:12px 16px;margin-bottom:20px;font-size:14px}
+
+.back{display:inline-block;margin:48px 0 0;border:2px solid var(--ink);border-radius:999px;padding:6px 22px;font-weight:700;font-size:14px;transition:background .2s,color .2s}
+.back:hover{background:var(--ink);color:#fff}
+
+footer{margin-top:72px;padding:36px 0;font-size:12px;color:#6b566e;border-top:1px solid var(--line);line-height:1.9}
+footer p+p{margin-top:6px}
+
+@media (max-width:820px){
+  nav ul{gap:16px;font-size:13px}
+  .logo span{display:none}
+  .title{padding:48px 0 36px}
+  .form{padding:22px 18px;box-shadow:5px 5px 0 var(--accent)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><i></i><span>Graphic Design Study</span></a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="column.html">Column</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="title">
+    <div class="shape s1" aria-hidden="true"></div>
+    <div class="shape s2" aria-hidden="true"></div>
+    <div class="wrap">
+      <h1>About</h1>
+      <p>リンク集とお問い合わせ。ご連絡は下のフォーム、または各SNSからお願いします。</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <section id="links">
+      <div class="sec-head"><h2>Links</h2><p>リンク</p></div>
+
+      <p class="group">漫画・イラスト掲載サイト</p>
+      <ul class="links">
+        <li><a href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📚</span><span><b>ジャンプルーキー</b><small>オリジナル漫画を掲載中</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+        <li><a href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🎨</span><span><b>Pixiv</b><small>二次創作はこちらに掲載</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+      </ul>
+
+      <p class="group">SNS・その他</p>
+      <ul class="links">
+        <li><a href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🦋</span><span><b>Bluesky</b><small>近況・作品のお知らせ</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+        <li><a href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🎬</span><span><b>YouTube（リリポピ）</b><small>動画チャンネル</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+        <li><a href="https://lilipopi.github.io/lilypopins/" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🌸</span><span><b>リリポピのホームページ</b><small>別サイト</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+      </ul>
+
+      <p class="group">Azalea72のホームページ</p>
+      <ul class="links">
+        <li><a href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📖</span><span><b>書評サイト</b><small>本・アニメ・映画・ゲーム・小説の備忘録</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+        <li><a href="https://azaleacreativeroom888.github.io/fan-english/" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">🍔</span><span><b>英語サイト（English Site）</b><small>英語話者と英語学習者に向けたサイト</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+        <li><a href="https://azaleacreativeroom888.github.io/fan-watercolor/" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">☁️</span><span><b>水彩画サイト</b><small>水彩画掲載</small></span><span class="arr" aria-hidden="true">→</span></a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <div class="sec-head"><h2>Contact</h2><p>お問い合わせフォーム</p></div>
+      <div class="form">
+        <p class="intro">ご質問・ご感想などはこちらからどうぞ。<br>Gmailで受け取り、返信いたします。</p>
+
+        <div data-fs-success class="ok" style="display:none;" role="status">メッセージを送信しました。ありがとうございます！</div>
+        <div data-fs-error class="ng" style="display:none;" role="alert"></div>
+
+        <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+          <div class="field">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="name" placeholder="Azalea72" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">メールアドレス <em class="req">*</em></label>
+            <input type="email" id="email" name="email" data-fs-field placeholder="example@email.com" autocomplete="email" required>
+            <span data-fs-error="email" class="err"></span>
+          </div>
+          <div class="field">
+            <label for="message">メッセージ <em class="req">*</em></label>
+            <textarea id="message" name="message" data-fs-field placeholder="メッセージを入力してください…" rows="6" required></textarea>
+            <span data-fs-error="message" class="err"></span>
+          </div>
+          <button class="send" type="submit" data-fs-submit-btn><span aria-hidden="true">📮</span> 送信する</button>
+        </form>
+      </div>
+    </section>
+
+    <a class="back" href="index.html">← トップページに戻る</a>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース（トレパク）、無断転載・転載、二次利用を禁止します。スクリーンショットの転載・無断引用はご遠慮ください。</p>
+    <p>Please refrain from using any images, text, or works on this website for AI training, tracing, unauthorized reproduction, redistribution, or secondary use.</p>
+  </div>
+</footer>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqvpvoz' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>

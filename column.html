@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Column | Graphic Design Study</title>
+<meta name="description" content="グラフィックデザインに関する漫画・イラスト・4コマと、軽い小論文。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#da07d6;
+  --accent-deep:#9b0498;
+  --accent-tint:#f9dcf7;
+  --ink:#1f0f22;
+  --paper:#fbf8fc;
+  --blue:#3b2bdb;
+  --line:#dcc9de;
+  --display:"Syne","Zen Kaku Gothic New",sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(251,248,252,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo i{width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:8px 0 0 -2px var(--blue);mix-blend-mode:multiply;display:inline-block;margin-right:8px}
+nav ul{list-style:none;display:flex;gap:28px;font-size:14px;font-weight:500}
+nav a{padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+nav a:hover,nav a[aria-current]{border-color:var(--accent)}
+
+/* page title */
+.title{position:relative;overflow:hidden;padding:72px 0 48px;border-bottom:3px solid var(--ink)}
+.title .wrap{position:relative}
+.title h1{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:-.035em;font-size:clamp(64px,14vw,150px);position:relative;z-index:2}
+.title p{position:relative;z-index:2;margin-top:20px;max-width:28em}
+.shape{position:absolute;border-radius:50%;mix-blend-mode:multiply;z-index:1}
+.s1{width:clamp(140px,24vw,300px);aspect-ratio:1;background:var(--accent);right:2%;top:-18%}
+.s2{width:clamp(110px,18vw,220px);aspect-ratio:1;background:var(--blue);right:16%;top:18%}
+.jump{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;list-style:none}
+.jump a{display:block;border:1.5px solid var(--ink);border-radius:999px;padding:3px 18px;font-size:14px;font-weight:500;transition:background .2s,color .2s}
+.jump a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* sections */
+section{padding:72px 0 8px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:32px;border-bottom:3px solid var(--ink);padding-bottom:14px}
+.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,4.5vw,44px);letter-spacing:-.02em;line-height:1.1}
+.sec-head p{font-size:14px;color:#6b566e}
+
+/* placeholder frames (画像に差し替え可) */
+.ph{position:relative;display:grid;place-items:center;aspect-ratio:4/3;border:2px solid var(--ink);background:repeating-linear-gradient(135deg,var(--accent-tint) 0 12px,#fff 12px 24px);font-size:13px;color:var(--accent-deep);font-weight:700;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* 4koma */
+.koma{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:48px;align-items:start}
+.strip{display:grid;gap:12px}
+.strip .ph{aspect-ratio:16/9;box-shadow:6px 6px 0 var(--accent)}
+.strip .ph b{position:absolute;left:8px;top:4px;font-family:var(--display);font-size:20px;color:var(--ink)}
+.koma h3{font-size:clamp(22px,3vw,28px);line-height:1.5;margin-bottom:10px}
+.meta{font-size:13px;color:#6b566e;margin-bottom:12px}
+
+/* works grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.work .ph{aspect-ratio:1;transition:transform .25s,box-shadow .25s}
+.work:hover .ph{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--accent)}
+.work h3{font-size:16px;margin-top:12px;line-height:1.5}
+.work p{font-size:13px;color:#6b566e;line-height:1.6}
+.tag{display:inline-block;font-size:12px;font-weight:700;background:var(--accent);color:#fff;border-radius:999px;padding:0 10px;margin-bottom:6px}
+
+/* essay */
+.essay{max-width:680px;margin:0 auto}
+.essay h3{font-size:clamp(24px,3.6vw,34px);line-height:1.45;margin-bottom:8px}
+.essay .meta{margin-bottom:28px}
+.essay h4{font-family:var(--display);font-weight:800;font-size:15px;color:var(--accent-deep);margin:28px 0 4px;letter-spacing:.02em}
+.essay p{margin-bottom:1em}
+.essay mark{background:linear-gradient(transparent 62%,var(--accent-tint) 62%);color:inherit;font-weight:700}
+
+footer{margin-top:72px;padding:40px 0;font-size:13px;color:#6b566e;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:820px){
+  nav ul{gap:16px;font-size:13px}
+  .logo span{display:none}
+  .title{padding:48px 0 36px}
+  .koma{grid-template-columns:1fr;gap:28px}
+  .strip{max-width:360px}
+  .grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:480px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><i></i><span>Graphic Design Study</span></a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="column.html" aria-current="page">Column</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="title">
+    <div class="shape s1" aria-hidden="true"></div>
+    <div class="shape s2" aria-hidden="true"></div>
+    <div class="wrap">
+      <h1>Column</h1>
+      <p>デザインにまつわる4コマ、漫画、イラスト、そして考えたこと。</p>
+      <ul class="jump">
+        <li><a href="#koma">4コマ</a></li>
+        <li><a href="#works">Manga &amp; Illustration</a></li>
+        <li><a href="#essay">Essay</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <section id="koma">
+      <div class="sec-head"><h2>4-Koma</h2><p>4コマ漫画</p></div>
+      <article class="koma">
+        <div class="strip" role="img" aria-label="4コマ漫画（画像を差し替えてください）">
+          <div class="ph"><b>1</b>1コマ目</div>
+          <div class="ph"><b>2</b>2コマ目</div>
+          <div class="ph"><b>3</b>3コマ目</div>
+          <div class="ph"><b>4</b>4コマ目</div>
+        </div>
+        <div>
+          <span class="tag">New</span>
+          <h3>「余白、もったいなくない？」</h3>
+          <p class="meta">2026.10.08 ／ テーマ：余白</p>
+          <p>ぎっしり詰め込んだチラシと、余白をたっぷりとったチラシ。どっちが目に入る？という4コマです。サンプルの枠なので、描いた4コマをここに入れてください。</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="works">
+      <div class="sec-head"><h2>Manga &amp; Illustration</h2><p>漫画・イラスト</p></div>
+      <div class="grid">
+        <article class="work">
+          <div class="ph">イラスト 01</div>
+          <h3>配色の練習：da07d6でつくる一枚</h3>
+          <p>ピンクがかった紫を主役に、補色を少しだけ。</p>
+        </article>
+        <article class="work">
+          <div class="ph">漫画 01</div>
+          <h3>フォントになった日（短編）</h3>
+          <p>文字たちが性格を持って暮らす世界の漫画。</p>
+        </article>
+        <article class="work">
+          <div class="ph">イラスト 02</div>
+          <h3>ポスター練習：視線の流れ</h3>
+          <p>左上から右下へ。目が動く道をデザインする。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="essay">
+      <div class="sec-head"><h2>Essay</h2><p>小さな小論文</p></div>
+      <article class="essay">
+        <h3>デザインにおける「余白」とは何か</h3>
+        <p class="meta">2026.10.08 ／ 約900字（サンプル）</p>
+
+        <h4>問い</h4>
+        <p>デザインを勉強し始めたころ、私は紙面がもったいなく感じて、空いている場所に何かを置きたくなった。しかし、上手な作品ほど空白が多い。余白とは本当に「何もない場所」なのだろうか。</p>
+
+        <h4>考え</h4>
+        <p>余白は、要素と要素のあいだに<mark>呼吸をつくるもの</mark>だと思う。文字の周りに空きがあれば読みやすくなり、写真の周りに空きがあれば主役として際立つ。つまり余白は、見せたいものを選んで強調する、もうひとつの「表現」である。</p>
+        <p>日本の水墨画や生け花も、描かないこと、飾りすぎないことで美しさを引き立ててきた。余白を恐れない感覚は、日本の美意識とも深くつながっているように感じる。</p>
+
+        <h4>結び</h4>
+        <p>余白は「足りない」のではなく「選んだ」結果である。これからは、何を置くかと同じ熱量で、何を置かないかを考えていきたい。</p>
+      </article>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Graphic Design Study</span>
+    <a href="index.html">Home に戻る</a>
+  </div>
+</footer>
+
+</body>
+</html>
